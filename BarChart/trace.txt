@@ -1,0 +1,6 @@
+Bar Chart Changes
+
+Chnage title to "Covid Cases Per State"
+Rotate bar labels -45
+Bar Width 0.8
+Legend Placement Right
