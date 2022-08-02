@@ -1,0 +1,147 @@
+{
+  "annotations": {
+    "list": [
+      {
+        "builtIn": 1,
+        "datasource": {
+          "type": "grafana",
+          "uid": "-- Grafana --"
+        },
+        "enable": true,
+        "hide": true,
+        "iconColor": "rgba(0, 211, 255, 1)",
+        "name": "Annotations & Alerts",
+        "target": {
+          "limit": 100,
+          "matchAny": false,
+          "tags": [],
+          "type": "dashboard"
+        },
+        "type": "dashboard"
+      }
+    ]
+  },
+  "editable": true,
+  "fiscalYearStartMonth": 0,
+  "graphTooltip": 0,
+  "id": 3,
+  "links": [],
+  "liveNow": false,
+  "panels": [
+    {
+      "datasource": {
+        "type": "mysql",
+        "uid": "wUIYU0kVk"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "custom": {
+            "align": "auto",
+            "displayMode": "auto",
+            "inspect": false
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 17,
+        "w": 20,
+        "x": 0,
+        "y": 0
+      },
+      "id": 2,
+      "options": {
+        "footer": {
+          "fields": "",
+          "reducer": [
+            "sum"
+          ],
+          "show": false
+        },
+        "showHeader": true
+      },
+      "pluginVersion": "9.0.5",
+      "targets": [
+        {
+          "datasource": {
+            "type": "mysql",
+            "uid": "wUIYU0kVk"
+          },
+          "decimalSeparator": ".",
+          "delimiter": ",",
+          "format": "table",
+          "group": [],
+          "header": true,
+          "ignoreUnknown": false,
+          "metricColumn": "none",
+          "rawQuery": true,
+          "rawSql": "SELECT state \"State\", sum(tot_cases) \"Total Cases\"\nFROM covid_data\nWHERE state in ('AL',\n'AZ',\n'AR',\n'CA',\n'CO',\n'CT',\n'DE',\n'FL',\n'GA',\n'ID',\n'IL',\n'IN',\n'IA',\n'KS',\n'KY',\n'LA',\n'ME',\n'MD',\n'MA',\n'MI',\n'MN',\n'MS',\n'MO',\n'MT',\n'NE',\n'NV',\n'NH',\n'NJ',\n'NM',\n'NY',\n'NC',\n'ND',\n'OH',\n'OK',\n'OR',\n'PA',\n'RI',\n'SC',\n'SD',\n'TN',\n'TX',\n'UT',\n'VT',\n'VA',\n'WA',\n'WV',\n'WI',\n'WY')\nGROUP BY state;\n",
+          "refId": "A",
+          "schema": [
+            {
+              "name": "",
+              "type": "string"
+            }
+          ],
+          "select": [
+            [
+              {
+                "params": [
+                  "tot_cases"
+                ],
+                "type": "column"
+              }
+            ]
+          ],
+          "skipRows": 0,
+          "table": "covid_data",
+          "timeColumn": "created_at",
+          "timeColumnType": "timestamp",
+          "where": [
+            {
+              "name": "$__timeFilter",
+              "params": [],
+              "type": "macro"
+            }
+          ]
+        }
+      ],
+      "title": "Covid Data ",
+      "type": "table"
+    }
+  ],
+  "refresh": false,
+  "schemaVersion": 36,
+  "style": "dark",
+  "tags": [],
+  "templating": {
+    "list": []
+  },
+  "time": {
+    "from": "now-6h",
+    "to": "now"
+  },
+  "timepicker": {},
+  "timezone": "",
+  "title": "Covid Data - Table",
+  "uid": "N1UHQAkVz",
+  "version": 1,
+  "weekStart": ""
+}

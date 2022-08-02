@@ -1,0 +1,12 @@
+TAble changes:
+
+Set 1:
+Column aligmnet - center
+Enable pagenation
+Cell Display Mode - Color Background (Gradient)
+Thresholds:
+	< 100000000 Green
+	100000000 - 200000000 Orange
+	> 200000000 Red
+	
+	
