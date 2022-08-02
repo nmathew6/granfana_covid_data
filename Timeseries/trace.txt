@@ -1,0 +1,7 @@
+Timeseries Changes:
+Set 1:
+Chnage title to "New Covid Cases Per Day"
+Legend - Hidden
+Gradient Mode - Scheme
+Color Scheme - Green Yellow Red (by value)
+Show grid lines - Off
